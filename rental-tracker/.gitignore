@@ -1,0 +1,8 @@
+target/
+*.db
+*.db-journal
+owner.cfg
+.idea/
+*.iml
+.vscode/
+*.class
