@@ -63,18 +63,20 @@ mvn dependency:resolve   # pulls sqlite-jdbc, JUnit, JaCoCo, shade
 ## Running the app
 
 ```bash
-mvn compile exec:java -Dexec.mainClass="com.brian.rentaltracker.Main"
+mvn compile exec:java -Dexec.mainClass="com.tracker.rentaltracker.Main"
 ```
 
 To start with the seeded sample data instead of an empty inventory:
 
 ```bash
-mvn compile exec:java -Dexec.mainClass="com.brian.rentaltracker.Main" -Dexec.args="--seed"
+mvn compile exec:java -Dexec.mainClass="com.tracker.rentaltracker.Main" -Dexec.args="--seed"
 ```
 
 This loads `sample-data.sql` (14 items, 6 active rentals, 4 users) and points
 your account at user id 1 (`liisa`), the sample data's owner, so the seeded
-items show up as yours instead of under a brand-new account.
+items show up as yours instead of under a brand-new account. Running the seed
+command again keeps existing rows and skips sample rows whose IDs are already
+present.
 
 Or build a runnable JAR:
 ```bash
@@ -101,3 +103,4 @@ Test groups (matching the brief):
   through the service layer, not the repository directly.
 - `domain/ItemStatusTest.java` — pure unit tests of the state machine, no
   database involved.
+
