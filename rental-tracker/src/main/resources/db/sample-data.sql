@@ -28,7 +28,7 @@ INSERT OR IGNORE INTO users (id, username, password) VALUES
 
 -- 14 items owned by user 1: 6 available, 6 rented, 2 unlisted, so every list
 -- (inventory, record-a-rental, confirm-a-return) clears 5 rows and paginates.
-INSERT INTO listed_items (item_id, owner_id, item_name, description, cost_per_day, status) VALUES
+INSERT OR IGNORE INTO listed_items (item_id, owner_id, item_name, description, cost_per_day, status) VALUES
   (1,  1, 'Ladder',          '6-step aluminium ladder',   5, 'available'),
   (2,  1, 'Drill',           'Cordless hammer drill',     4, 'rented'),
   (3,  1, 'Tent',            '4-person dome tent',        8, 'unlisted'),
@@ -47,7 +47,7 @@ INSERT INTO listed_items (item_id, owner_id, item_name, description, cost_per_da
 -- 6 active rentals with different due dates (so confirm-a-return paginates and
 -- its sort-by-due-date shows), plus one closed rental for history. Renters are
 -- reused across rentals (meelis, marili, and siim each rent more than once).
-INSERT INTO rentals (rental_id, item_id, renter_id, start_time, end_time, returned_at, status) VALUES
+INSERT OR IGNORE INTO rentals (rental_id, item_id, renter_id, start_time, end_time, returned_at, status) VALUES
   (1, 2,  2, '2026-06-16 14:30', '2026-06-19 14:30', NULL,               'active'),
   (2, 6,  3, '2026-06-17 09:00', '2026-06-20 09:00', NULL,               'active'),
   (3, 10, 4, '2026-06-15 12:00', '2026-06-18 12:00', NULL,               'active'),
