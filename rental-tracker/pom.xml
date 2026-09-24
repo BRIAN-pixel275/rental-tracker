@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.brian</groupId>
+    <groupId>com.tracker</groupId>
     <artifactId>rental-tracker</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -61,7 +61,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
-                    <mainClass>com.brian.rentaltracker.Main</mainClass>
+                    <mainClass>com.tracker.rentaltracker.Main</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -75,7 +75,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.brian.rentaltracker.Main</mainClass>
+                                    <mainClass>com.tracker.rentaltracker.Main</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
